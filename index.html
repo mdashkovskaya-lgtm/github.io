@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>Продажа офиса 300 м² в центре Петербурга | 2 входа, склад на рельсах, душевая</title>
+    <meta name="description" content="Готовый офис с отделкой White Box в центре СПб. 300 м², 7 комнат, склад на рельсах, парковка, душевая, АТС. 84 млн руб. Показ в любое время." />
+    <meta name="keywords" content="офис в центре Петербурга, продажа офиса, коммерческая недвижимость, склад на рельсах, 300 м², первый этаж, парковка, переговорная, душевая, АТС, готовый бизнес" />
+    <link rel="canonical" href="https://ваш-сайт.ru/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Офис 300 м² в центре Петербурга с рельсовым складом" />
+    <meta property="og:description" content="Просторный офис с отдельным входом, переговорной на 20 человек, кухней и душевой. Склад на рельсах 70 м². Парковка во дворе." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ваш-сайт.ru/" />
+    <meta property="og:image" content="https://ваш-сайт.ru/img/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Офис 300 м² в центре Петербурга с рельсовым складом" />
+    <meta name="twitter:description" content="Готовый офис с отделкой White Box. 7 комнат, переговорная, душевая, парковка. Склад на рельсах 70 м²." />
+    <meta name="twitter:image" content="https://ваш-сайт.ru/img/og-image.jpg" />
+
+    <!-- JSON‑LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Офис в центре Петербурга 300 м²",
+            "description": "Готовый офис с отдельным входом, переговорной на 20 человек, кухней, душевой и складом на рельсах. Парковка в закрытом дворе.",
+            "brand": { "@type": "Brand", "name": "Коммерческая недвижимость СПб" },
+            "offers": {
+                "@type": "Offer",
+                "price": "84000000",
+                "priceCurrency": "RUB",
+                "availability": "https://schema.org/InStock",
+                "url": "https://ваш-сайт.ru/"
+            },
+            "additionalProperty": [
+                { "@type": "PropertyValue", "name": "Площадь", "value": "300 м²" },
+                { "@type": "PropertyValue", "name": "Этаж", "value": "1" },
+                { "@type": "PropertyValue", "name": "Количество комнат", "value": "7" },
+                { "@type": "PropertyValue", "name": "Парковка", "value": "есть, закрытый двор" },
+                { "@type": "PropertyValue", "name": "Склад на рельсах", "value": "70 м²" }
+            ]
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ——— БАЗОВЫЕ СТИЛИ ——— */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #E0D9D9;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ——— HERO ——— */
+        .hero {
+            position: relative;
+            height: 90vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+            background: #0b1a2e;
+        }
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 1;
+        }
+        .hero-slide.active {
+            opacity: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 2;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 3;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+        }
+        .hero h1 span {
+            color: #f5b841;
+        }
+        .hero .sub {
+            font-size: 22px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        .hero .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 24px;
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        .hero .tags i {
+            color: #f5b841;
+            margin-right: 6px;
+        }
+        .btn {
+            display: inline-block;
+            background: #f5b841;
+            color: #0b1a2e;
+            padding: 16px 40px;
+            font-weight: 700;
+            font-size: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #e0a530;
+            transform: scale(1.02);
+        }
+
+        /* ——— СЕКЦИИ ——— */
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .section .lead {
+            font-size: 18px;
+            color: #495057;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        /* ——— СЕТКИ ——— */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* ——— КАРТОЧКИ ——— */
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transition: 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+        }
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            background: #e9ecef;
+        }
+        .card-body {
+            padding: 20px 20px 24px;
+        }
+        .card .icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .card p {
+            font-size: 15px;
+            color: #495057;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+            font-size: 15px;
+            color: #212529;
+        }
+        .card ul li {
+            padding: 4px 0;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        .card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* ——— ГАЛЕРЕЯ ——— */
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            background: #e9ecef;
+        }
+        .gallery-item .caption {
+            padding: 10px 14px 14px;
+            font-size: 15px;
+            font-weight: 500;
+            text-align: center;
+            color: #0b1a2e;
+            background: white;
+        }
+
+        /* ——— LIGHTBOX ——— */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .lightbox-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            cursor: default;
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 44px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: 0.2s;
+            line-height: 1;
+            user-select: none;
+        }
+        .lightbox-close:hover {
+            transform: scale(1.2);
+            color: #f5b841;
+        }
+
+        /* ——— АНИМАЦИЯ ПОЯВЛЕНИЯ ——— */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Задержки для карточек */
+        .card:nth-child(1) { transition-delay: 0.05s; }
+        .card:nth-child(2) { transition-delay: 0.10s; }
+        .card:nth-child(3) { transition-delay: 0.15s; }
+        .card:nth-child(4) { transition-delay: 0.20s; }
+        .card:nth-child(5) { transition-delay: 0.25s; }
+        .card:nth-child(6) { transition-delay: 0.30s; }
+        .gallery-item:nth-child(1) { transition-delay: 0.05s; }
+        .gallery-item:nth-child(2) { transition-delay: 0.10s; }
+        .gallery-item:nth-child(3) { transition-delay: 0.15s; }
+        .gallery-item:nth-child(4) { transition-delay: 0.20s; }
+        .gallery-item:nth-child(5) { transition-delay: 0.25s; }
+        .gallery-item:nth-child(6) { transition-delay: 0.30s; }
+        .gallery-item:nth-child(7) { transition-delay: 0.35s; }
+        .gallery-item:nth-child(8) { transition-delay: 0.40s; }
+        .gallery-item:nth-child(9) { transition-delay: 0.45s; }
+
+        /* ——— ТАБЛИЦА ——— */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+        table th {
+            background: #A30505;
+            color: white;
+            padding: 14px 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+        table td {
+            padding: 12px 18px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ——— ЦВЕТНЫЕ БЛОКИ ——— */
+        .highlight {
+            background: #0b1a2e;
+            color: white;
+            border-radius: 16px;
+            padding: 40px 36px;
+        }
+        .highlight h2 { color: white; }
+        .highlight .lead { color: #ced4da; }
+
+        .cta {
+            background: #f5b841;
+            color: #0b1a2e;
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 16px;
+        }
+        .cta h2 { font-size: 32px; margin-bottom: 8px; }
+        .cta p { font-size: 18px; margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta .btn { background: #0b1a2e; color: white; }
+        .cta .btn:hover { background: #1a2f44; }
+
+        .footer {
+            background: #A30505;
+            color: #adb5bd;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+		* ——— КАРТА (iframe) ——— */
+        .map-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 450px;
+            display: block;
+            border: 0;
+        }
+		
+		
+        /* ——— АДАПТИВ ——— */
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 28px; }
+            .hero .sub { font-size: 17px; }
+            .section h2 { font-size: 26px; }
+            .hero { height: 70vh; min-height: 400px; }
+            .card-img { height: 140px; }
+            .gallery-item img { height: 160px; }
+            .lightbox-close { top: 20px; right: 25px; font-size: 36px; }
+        }
+        @media (max-width: 480px) {
+            .gallery-item img { height: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ——— HERO ——— -->
+    <section class="hero" id="hero">
+        <!-- ВСЕ СЛАЙДЫ — ИЗ ПАПКИ img/ -->
+        <div class="hero-slide active" style="background-image: url('img/slide1.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('img/slide2.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('img/slide3.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('img/slide4.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('img/slide5.jpg');"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1>Готовый офис в центре <span>Петербурга</span></h1>
+            <p class="sub">300 м² · 7 комнат · склад на рельсах · 2 входа · парковка</p>
+            <div class="tags">
+                <span>📍 2 мин до метро «Достоевская»</span>
+                <span>🚪 2 отдельных входа</span>
+                <span>🚗 парковка в закрытом дворе</span>
+                <span>🚿 душевая</span>
+            </div>
+            <a href="#form" class="btn">Записаться на показ</a>
+        </div>
+    </section>
+
+    <!-- ——— ИДЕАЛЬНОЕ ЗОНИРОВАНИЕ ——— -->
+    <section class="section" id="zoning">
+        <div class="container">
+            <h2 class="fade-in">Идеальное зонирование</h2>
+            <p class="lead fade-in">Кабинет директора и переговорная — на улицу. Сотрудники и склад — в тихий двор.</p>
+            <div class="grid-2">
+                <div class="card fade-in">
+                    <div class="card-body">
+                        <span class="icon">🏙️</span>
+                        <h3>Окна на УЛИЦУ (5 помещений)</h3>
+                        <ul>
+                            <li>Кабинет директора — 15,7 м²</li>
+                            <li>Большая переговорная — 37,5 м²</li>
+                            <li>Кабинет секретаря — 11,4 м²</li>
+                            <li>Малая переговорная — 20 м²</li>
+                            <li>Кабинет бухгалтерии — 12 м²</li>
+                        </ul>
+                        <p style="margin-top:8px; font-weight:600; color:#0b1a2e;">Статус, свет, видимость</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-body">
+                        <span class="icon">🌳</span>
+                        <h3>Окна во ДВОР (4 помещения)</h3>
+                        <ul>
+                            <li>Комната персонала А — 36 м²</li>
+                            <li>Комната персонала Б — 28 м²</li>
+                             <li>Комната персонала В — 13 м²</li>
+                             <li>Склад/архив — 36 м²</li>
+                        </ul>
+                        <p style="margin-top:8px; font-weight:600; color:#0b1a2e;">Тишина, безопасность, концентрация</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ——— ПОЧЕМУ ОФИС — ЛУЧШИЙ ВЫБОР (с фото) ——— -->
+    <section class="section" style="background:#f1f3f5;" id="advantages">
+        <div class="container">
+            <h2 style="text-align:center;" class="fade-in">Почему этот офис — лучший выбор</h2>
+            <p style="text-align:center; max-width:700px; margin:0 auto 40px; font-size:18px; color:#495057;" class="fade-in">Продумано до мелочей: от склада до кофемашины</p>
+            <div class="grid-3">
+                <div class="card fade-in">
+                    <img class="card-img" src="img/sklad.jpg" alt="Склад на рельсах">
+                    <div class="card-body">
+                        <span class="icon">📦</span>
+                        <h3>Склад на рельсах</h3>
+                        <p>36 м² заменяют 75 м² обычного склада. Отдельный вход для загрузки.</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <img class="card-img" src="img/kuhnya.jpg" alt="Кухня">
+                    <div class="card-body">
+                        <span class="icon">☕</span>
+                        <h3>Готовая кухня</h3>
+                        <p>Плита, холодильник с морозилкой, кофемашина, микроволновка, 4 места.</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <img class="card-img" src="img/it.jpg" alt="IT-инфраструктура">
+                    <div class="card-body">
+                        <span class="icon">📞</span>
+                        <h3>IT-инфраструктура</h3>
+                        <p>АТС на 30 номеров, разводка RJ-45 по всем комнатам. Запуск за 1 день.</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <img class="card-img" src="img/sanuzel.jpg" alt="Душевая">
+                    <div class="card-body">
+                        <span class="icon">🚿</span>
+                        <h3>3 санузла + душевая</h3>
+                        <p>VIP-санузел с душем для директора, 2 общих для персонала и гостей.</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <img class="card-img" src="img/vhod.jpg" alt="Вход">
+                    <div class="card-body">
+                        <span class="icon">🚪</span>
+                        <h3>2 отдельных входа</h3>
+                        <p>Парадный — для гостей, загрузочный — для склада и сотрудников.</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <img class="card-img" src="img/dvor.jpg" alt="Двор">
+                    <div class="card-body">
+                        <span class="icon">🚗</span>
+                        <h3>Закрытый двор</h3>
+                        <p>Личное машиноместо + 2 гостевых. Камеры, шлагбаум, безопасность.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ——— ХАРАКТЕРИСТИКИ + ГАЛЕРЕЯ ——— -->
+    <section class="section" id="specs">
+        <div class="container">
+            <h2 class="fade-in">Технические характеристики</h2>
+            <p class="lead fade-in">Честные цифры для расчёта вашего бизнеса</p>
+            <div class="fade-in">
+                <table>
+                    <thead>
+                        <tr><th>Параметр</th><th>Значение</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Общая площадь</td><td>300 м² (264 офис + 36 склад)</td></tr>
+                        <tr><td>Отдельные комнаты</td><td>7 шт + склад + кухня + санузлы</td></tr>
+                        <tr><td>Самая большая комната</td><td>36 м² (Open-space во двор)</td></tr>
+                        <tr><td>Кабинет директора</td><td>15,7 м² (окно на улицу)</td></tr>
+                        <tr><td>Большая переговорная</td><td>37,5 м² (до 20 человек)</td></tr>
+                        <tr><td>Склад на рельсах</td><td>36 м² </td></tr>
+                        <tr><td>Санузлы</td><td>3 шт (1 VIP с душевой)</td></tr>
+                        <tr><td>Окна на улицу / во двор</td><td>5 помещений / 4 помещения</td></tr>
+                        <tr><td>Входы</td><td>2 (парадный + загрузочный)</td></tr>
+                        <tr><td>Парковка</td><td>1 личное + 2 гостевых в закрытом дворе</td></tr>r>
+                        <tr><td>Телефония</td><td>АТС до 30 номеров</td></tr>
+                        <tr><td>Стоимость</td><td><strong>84 000 000 руб.</strong> (280 000 руб/м²)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ГАЛЕРЕЯ (все фото из img/) -->
+            <div style="margin-top: 50px;">
+                <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 10px;" class="fade-in">Фотографии объекта</h3>
+                <p style="font-size: 18px; color: #495057; margin-bottom: 30px;" class="fade-in">Кликните на фото, чтобы увеличить</p>
+                <div class="grid-3" id="galleryGrid">
+                    <div class="gallery-item fade-in" data-lightbox="img/gallery1.jpg">
+                        <img src="img/gallery1.jpg" alt="Кадастровый план">
+                        <div class="caption">Кадастровый план</div>
+                    </div>
+                    <div class="gallery-item fade-in" data-lightbox="img/gallery2.jpg">
+                        <img src="img/gallery2.jpg" alt="Двор и парковка">
+                        <div class="caption">Закрытый двор и парковка</div>
+                    </div>
+                    <div class="gallery-item fade-in" data-lightbox="img/gallery3.jpg">
+                        <img src="img/gallery3.jpg" alt="Склад 36 м² на рельсах">
+                        <div class="caption">Склад 36 м² с рельсовыми стеллажами</div>
+                    </div>
+                    <div class="gallery-item fade-in" data-lightbox="img/gallery4.jpg">
+                        <img src="img/gallery4.jpg" alt="Кухня">
+                        <div class="caption">Кухня с плитой, холодильником, кофемашиной</div>
+                    </div>
+                    <div class="gallery-item fade-in" data-lightbox="img/gallery5.jpg">
+                        <img src="img/gallery5.jpg" alt="Душевая">
+                        <div class="caption">VIP-санузел с душевой кабиной</div>
+                    </div>
+                    <div class="gallery-item fade-in" data-lightbox="img/gallery6.jpg">
+                        <img src="img/gallery6.jpg" alt="Большая переговорная">
+                        <div class="caption">Переговорная на 20 человек (окна на улицу)</div>
+                    </div>
+                    <div class="gallery-item fade-in" data-lightbox="img/gallery7.jpg">
+                        <img src="img/gallery7.jpg" alt="Кабинет директора">
+                        <div class="caption">Кабинет директора (15,7 м², окно на улицу)</div>
+                    </div>
+                    <div class="gallery-item fade-in" data-lightbox="img/gallery8.jpg">
+                        <img src="img/gallery8.jpg" alt="Опенспейс 35 м²">
+                        <div class="caption">Просторный опенспейс для сотрудников (35 м²)</div>
+                    </div>
+                    <div class="gallery-item fade-in" data-lightbox="img/gallery9.jpg">
+                        <img src="img/gallery9.jpg" alt="Санузел общий">
+                        <div class="caption">Общий санузел для персонала</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ——— БЛОК С ЦЕНОЙ ——— -->
+    <section class="section" style="background:#A30505; color:white;">
+        <div class="container">
+            <div class="grid-2">
+                <div class="fade-in">
+                    <h2 style="color:white;">84 млн руб.</h2>
+                    <p style="font-size:20px; color:#f5b841; font-weight:600;">280 000 руб./м²</p>
+                    <p style="margin-top:16px; color:#ced4da; font-size:17px;">Цена ниже, чем строить с нуля. Всё уже готово: ремонт, коммуникации, оборудование.</p>
+                </div>
+                <div class="fade-in">
+                    <h3 style="color:white; font-size:20px;">Что вы получаете в подарок:</h3>
+                    <ul style="color:#ced4da; font-size:17px; list-style:none; padding:0;">
+                        <li style="padding:6px 0;">✅ Рельсовые стеллажи (экономия ~1,8 млн руб.)</li>
+                        <li style="padding:6px 0;">✅ АТС и IT-разводка (экономия ~300 000 руб.)</li>
+                        <li style="padding:6px 0;">✅ Кухня с техникой (экономия ~150 000 руб.)</li>
+                        <li style="padding:6px 0;">✅ Душевая кабина с санузлом (экономия ~200 000 руб.)</li>
+                    </ul>
+                    <p style="color:#f5b841; font-weight:700; font-size:18px; margin-top:16px;">Итого экономия на старте — более 2,4 млн руб.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ——— ИДЕАЛЬНО ДЛЯ ——— -->
+    <section class="section" id="for-whom">
+        <div class="container">
+            <h2 style="text-align:center;" class="fade-in">Идеально для</h2>
+            <div class="grid-4" style="margin-top:24px;">
+                <div class="card fade-in">
+                    <div class="card-body" style="text-align:center;">
+                        <span class="icon">⚖️</span>
+                        <h3>Юридических фирм</h3>
+                        <p>Архив 70 м² + переговорная на 20 чел.</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-body" style="text-align:center;">
+                        <span class="icon">💻</span>
+                        <h3>IT-компаний</h3>
+                        <p>3 комнаты во двор для разработчиков, душ для команды</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-body" style="text-align:center;">
+                        <span class="icon">🛒</span>
+                        <h3>Интернет-магазинов</h3>
+                        <p>Склад + офис продаж в одном месте</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-body" style="text-align:center;">
+                        <span class="icon">🦷</span>
+                        <h3>Медицинских центров</h3>
+                        <p>5 кабинетов на улицу + отдельный вход для пациентов</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ——— ЛОКАЦИЯ ——— -->
+    <section class="section" style="background:#f1f3f5;" id="location">
+        <div class="container">
+            <h2 class="fade-in">Локация — центр Петербурга</h2>
+            <div class="grid-2">
+                <div class="fade-in">
+                    <p style="font-size:18px;"><strong>🚇 Метро «Достоевская»</strong> — 2 минуты пешком</p>
+                    <p style="font-size:18px;"><strong>🚇 Метро «Владимирская»</strong> — 4 минуты пешком</p>
+                    <p style="font-size:18px; margin-top:20px;">🚗 Закрытый двор со шлагбаумом. Заезд прямо с улицы.</p>
+                    <p style="font-size:18px;">📦 Отдельные ворота для загрузки склада.</p>
+                </div>
+                <!-- === КАРТА === -->
+                <div class="map-wrapper fade-in">
+                    </a><iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&l=trf&ll=30.345939%2C59.927869&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzQ0OTkxNBJU0KDQvtGB0YHQuNGPLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0KnQtdGA0LHQsNC60L7QsiDQv9C10YDQtdGD0LvQvtC6LCAxN9CQIgoNZcHyQRVUtm9C&z=17.55" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+        </div>
+    </section>
+
+    <!-- ——— КАК МЫ РАБОТАЕМ ——— -->
+    <section class="section" id="steps">
+        <div class="container">
+            <h2 style="text-align:center;" class="fade-in">Как мы работаем</h2>
+            <div class="grid-4" style="margin-top:24px;">
+                <div class="card fade-in">
+                    <div class="card-body" style="text-align:center;">
+                        <span style="font-size:32px; font-weight:700; color:#f5b841;">1</span>
+                        <h3>Звонок</h3>
+                        <p>Расскажу всё за 5 минут</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-body" style="text-align:center;">
+                        <span style="font-size:32px; font-weight:700; color:#f5b841;">2</span>
+                        <h3>Показ</h3>
+                        <p>Приезжайте или смотрите онлайн</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-body" style="text-align:center;">
+                        <span style="font-size:32px; font-weight:700; color:#f5b841;">3</span>
+                        <h3>Бесплатная бронь</h3>
+                        <p>Фиксируем за вами на 3 дня</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-body" style="text-align:center;">
+                        <span style="font-size:32px; font-weight:700; color:#f5b841;">4</span>
+                        <h3>Сделка</h3>
+                        <p>Регистрация за 1 день</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ——— CTA ——— -->
+    <section class="section" id="form">
+        <div class="container">
+            <div class="cta fade-in">
+                <h2>Не упустите этот объект</h2>
+                <p>Таких офисов с рельсовым складом в центре — единицы. Завтра его купят.</p>
+                <a href="tel:+78005553535" class="btn" style="background:#0b1a2e; color:white; display:inline-block; margin-top:8px;">📞 Позвонить сейчас</a>
+                <p style="margin-top:16px; font-size:16px; color:#1a1a1a;">+7 (800) 555‑35‑35 · Работаем до 22:00</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ——— FOOTER ——— -->
+    <div class="footer">
+        <div class="container">
+            <p>© 2026 · Продажа коммерческой недвижимости в Санкт‑Петербурге</p>
+            <p style="margin-top:6px; opacity:0.7;">Объект — 300 м², центр, 2 станции метро, 2 входа, склад на рельсах</p>
+        </div>
+    </div>
+
+    <!-- ——— LIGHTBOX ——— -->
+    <div class="lightbox-overlay" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img id="lightboxImage" src="" alt="Увеличенное фото">
+    </div>
+
+    <!-- ——— СКРИПТЫ ——— -->
+    <script>
+        // 1. Слайдер для hero
+        (function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            let current = 0;
+            const total = slides.length;
+            function nextSlide() {
+                slides[current].classList.remove('active');
+                current = (current + 1) % total;
+                slides[current].classList.add('active');
+            }
+            setInterval(nextSlide, 5000);
+        })();
+
+        // 2. Анимация появления при прокрутке
+        (function() {
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -20px 0px'
+            });
+            elements.forEach(el => observer.observe(el));
+        })();
+
+        // 3. Lightbox
+        (function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImage');
+            const closeBtn = document.getElementById('lightboxClose');
+
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    const imgSrc = this.dataset.lightbox || this.querySelector('img')?.src;
+                    if (imgSrc) {
+                        lightboxImg.src = imgSrc;
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
